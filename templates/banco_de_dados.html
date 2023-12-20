@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"
+        ></script>
+
+        <title>Banco de Dados</title>
+    </head>
+    <body>
+        <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="https://camo.githubusercontent.com/43cba2b61fa979af59e6c0ab5adbaef141030bfbe91039307ec5fdac047198c4/68747470733a2f2f7374796c65732e7265646469746d656469612e636f6d2f74355f32716d366b2f7374796c65732f636f6d6d756e69747949636f6e5f64686a723667756330337835312e706e673f77696474683d32353626733d33653832356237323035633766343937643436393530323865333538643236656533353966383462" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+      Banco De Dados
+    </a>
+  </div>
+</nav>
+<table class="table table-light table-striped-columns">
+  <thead>
+    <tr class="table-light">
+      <th scope="col">Id</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Idade</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%for resultado in resultado%}
+    <tr>
+      <th scope="row">{{resultado[0]}}</th>
+      <td>{{resultado[1]}}</td>
+      <td>{{resultado[2]}}</td>
+    </tr>
+    {%endfor%}
+  </tbody>
+</table>
+
+<div class="d-grid gap-2">
+  <button class="btn btn-dark" id="botao" type="submit">Ir para Formulario</button>
+</div>
+
+        <h2 id="chamada"></h2>
+
+        <script
+            src="https://code.jquery.com/jquery-3.7.1.js"
+            integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+            crossorigin="anonymous"
+        ></script>
+        <script src="{{ url_for('static', filename='js/funcao.js') }}"></script>
+    </body>
+</html>
